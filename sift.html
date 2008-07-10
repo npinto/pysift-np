@@ -1,0 +1,345 @@
+<!-- Creator     : groff version 1.19.2 -->
+<!-- CreationDate: Mon Mar 24 14:42:16 2008 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<style type="text/css">
+       p     { margin-top: 0; margin-bottom: 0; }
+       pre   { margin-top: 0; margin-bottom: 0; }
+       table { margin-top: 0; margin-bottom: 0; }
+</style>
+<title></title>
+</head>
+<body>
+
+<hr>
+
+
+<p valign="top">SIFT(1) BSD General Commands Manual
+SIFT(1)</p>
+
+<p style="margin-top: 1em" valign="top"><b>NAME</b></p>
+
+<p style="margin-left:8%;"><b>sift</b> &mdash; Scale
+Invariant Feature Transform</p>
+
+
+<p style="margin-top: 1em" valign="top"><b>SYNOPSIS</b></p>
+
+<p style="margin-left:15%;"><b>sift</b> [<b>&minus;vhb</b>]
+[<b>&minus;o&nbsp;</b><i>filename</i>]
+[<b>&minus;k&nbsp;</b><i>filename</i>]
+[<b>&minus;p&nbsp;</b><i>prefix</i>]
+[<b>&minus;S&nbsp;</b><i>number</i>]
+[<b>&minus;O&nbsp;</b><i>number</i>]
+[<b>&minus;t&nbsp;</b><i>number</i>]
+[<b>&minus;e&nbsp;</b><i>number</i>]
+[<b>&minus;&minus;save&minus;gss</b>]
+[<b>&minus;&minus;no&minus;descriptors</b>]
+[<b>&minus;&minus;no&minus;orientations</b>]
+[<b>&minus;&minus;stable&minus;order</b>]
+[<b>&minus;&minus;floating&minus;point</b>]
+[<b>&minus;&minus;unnormalized</b>] file.pgm ...</p>
+
+<p style="margin-top: 1em" valign="top"><b>OPTIONS <br>
+&minus;&minus;verbose</b>, <b>&minus;v</b></p>
+
+<p style="margin-left:26%;">Be verbose.</p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;help</b>,
+<b>&minus;h</b></p>
+
+<p style="margin-left:26%; margin-top: 1em">Print a summary
+of options.</p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;output</b>
+<i>outfile</i>, <b>&minus;o</b> <i>outfile</i></p>
+
+<p style="margin-left:26%;">Wirte the keypoints to
+<i>outfile.</i></p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;prefix</b>
+<i>prefix</i>, <b>&minus;p</b> <i>prefix</i></p>
+
+<p style="margin-left:26%;">Derive the output filename
+prefixing <i>prefix</i> to the input filename.</p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;binary</b>,
+<b>&minus;b</b></p>
+
+<p style="margin-left:26%;">Write the descriptors to a
+binary file. The name of this file is derived from the
+output filename by removing the &lsquo;.key&rsquo; suffix
+and adding the &lsquo;.desc&rsquo; suffix.</p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;keypoints</b>
+<i>filename,</i> <b>&minus;k</b> <i>filename</i></p>
+
+<p style="margin-left:26%;">Instead of running the SIFT
+detector, read the keypoints from <i>file name</i> (but
+still compute the descriptors).</p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;save&minus;gss</b></p>
+
+<p style="margin-left:26%; margin-top: 1em">Save the layers
+of the Gaussian scale space. This produces a is derived from
+the output filename by removing the &lsquo;.pgm&rsquo;
+suffix, and adding the index of the level and the
+&lsquo;.pgm&rsquo; suffix.</p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;octaves</b>
+<i>number</i>, <b>&minus;O</b> <i>number</i></p>
+
+<p style="margin-left:26%;">Set the number of octave to
+<i>number.</i> If not specified, this value is automatically
+computed to span all possible octaves.</p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;levels</b>
+<i>number</i>, <b>&minus;S</b> <i>number</i></p>
+
+<p style="margin-left:26%;">Set the number of levels per
+octave to <i>number.</i> The default value is 3.</p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;first&minus;octave</b>
+<i>number</i></p>
+
+<p style="margin-left:26%;">Set the index of the first
+octave of the pyramid to <i>number.</i> The default value is
+-1.</p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;threshold</b>
+<i>number,</i> <b>&minus;t</b> <i>number</i></p>
+
+<p style="margin-left:26%;">Set the SIFT detector threshold
+to <i>number.</i></p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;edge&minus;threshold</b>
+<i>number</i>, <b>&minus;e</b> <i>number</i></p>
+
+<p style="margin-left:26%;">Set the SIFT detector edge
+rejection threshold to <i>number.</i></p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;no&minus;descriptors</b></p>
+
+<p style="margin-left:26%;">Do not compute nor wirte to the
+output file the descriptors.</p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;no&minus;orientations</b></p>
+
+<p style="margin-left:26%;">Set implicitly the orientation
+of all keypoints to zero.</p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;stable&minus;order</b></p>
+
+<p style="margin-left:26%;">Preserve the order of keypoints
+read from a file.</p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;floating&minus;point</b></p>
+
+<p style="margin-left:26%;">Save descriptors as
+floating-point numbers.</p>
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;&minus;unnormalized</b></p>
+
+<p style="margin-left:26%;">Do not normalize the
+descriptors.</p>
+
+
+<p style="margin-top: 1em" valign="top"><b>OVERVIEW</b></p>
+
+<p style="margin-left:8%;"><b>sift</b> computes D.
+Lowe&rsquo;s Scale Invariant Feature Transform (SIFT). The
+program can be used to process either a single image or
+several images in a batch. It is possible to customize the
+most important parameters of the algorithm and to generate
+descriptors for keypoints computed externally.</p>
+
+<p style="margin-left:8%; margin-top: 1em">In the most
+simple form <b>sift</b> takes an image in PGM format and
+computes its SIFT keypoints and the relative descriptors,
+producing a &lsquo;.key&rsquo; ASCII file. This file has one
+line per keypoint, with the x and y coordinates (pixels),
+the scale (pixels), the orientation (radians) and 128
+numbers (in the range 0-255) representing the descriptor.
+This file is almost equivalent to the output of D.
+Lowe&rsquo;s original implementation, except that x and y
+are swapped and the orientation is negated due to a
+different choice of the image coordinate system.
+<b>&minus;&minus;floating-point</b> can be used to save full
+floating point descriptors instead of integer
+descriptors.</p>
+
+<p style="margin-left:8%; margin-top: 1em">By default, the
+name of the ouptut file is obtained by removing the
+&lsquo;.pgm&rsquo; suffix (if any) from the name of the
+input file and then appending the &lsquo;.key&rsquo; suffix.
+The option <b>&minus;&minus;output</b> <i>name</i> changes
+this behaviour and uses the name <i>name</i> instead.
+<b>&minus;&minus;output</b> works only when processing a
+single image. When processing image batches, you can use the
+<b>&minus;&minus;prefix</b> <i>prefix</i> option, which
+constructs the name of each output file by prefixing
+&lsquo;prefix&rsquo; <i>prefix</i> to the base name of the
+corresponding input file, and then substituting
+&lsquo;.pgm&rsquo; with &lsquo;.key&rsquo; as before. Note
+that <i>prefix</i> is added verbatim to the name. If
+<i>prefix</i> is a directory, it should explicitly contain
+trailing file separator &lsquo;/&rsquo;.</p>
+
+<p style="margin-left:8%; margin-top: 1em">Descriptors
+occupy lots of disk space, especially if saved in ASCII
+format. This problem can be alleviated by specifying the
+<b>&minus;&minus;binary</b> option, which writes (only) the
+descriptors to a separate file in binary format. The name of
+this file is obtained by removing the suffix
+&lsquo;.key&rsquo; (if any) from the name of the keypoint
+output file, and then appending the suffix
+&lsquo;.desc&rsquo; to it. Descriptors and keypoints are
+written to their files in the same order and each component
+of a descriptor takes exactly one byte. If this option is
+used in conjunction with
+<b>&minus;&minus;floating-point</b>, then the descriptors
+are saved as 32 bit IEEE floats, with each component taking
+exactly four bytes. Big-endian (most-significant byte first,
+network order) format is used.</p>
+
+<p style="margin-left:8%; margin-top: 1em">Sometimes one
+wants to compute the descriptors of keypoints generated
+externally. This can be done by the
+<b>&minus;&minus;keypoints</b> <i>file.key</i> option, which
+reads the keypoints from <i>file.key</i>. This file has the
+same format of the keypoint files produced by <b>sift</b>
+(except that the descriptors are omitted). Keypoints are
+then written along with their descriptors to the output file
+as normal. In the process keypoints are re-ordered by
+increasing scale, which means that the ordering of the input
+and output file may differ. This reordering can be prevented
+by specifying <b>&minus;&minus;stalbe&minus;oder</b>. If
+this option is used, it is recommended to provide keypoints
+already ordered by scale as this may significantly improve
+the computation speed. Note that
+<b>&minus;&minus;keypoints</b> is limited to process a
+single image per time.</p>
+
+<p style="margin-left:8%; margin-top: 1em">The SIFT
+algorithm computes a Gaussian pyramid of the input image. To
+change the number of octaves, the index of the first octave
+and the number of levels per octave of the pyramid, use the
+options <b>&minus;&minus;octaves</b>,
+<b>&minus;&minus;first-octave</b> and
+<b>&minus;&minus;levels</b> respectively. Note that setting
+<b>&minus;&minus;first-octave</b> to -1, -2, ... will cause
+the base of the pyramid to be two, three, ... times larger
+than the input image. Usually going beyond -1 makes little
+sense.</p>
+
+<p style="margin-left:8%; margin-top: 1em">In order to
+select reliable keypoints, SIFT rejects extrema of the
+Difference of Gaussian scale space which are smaller than a
+threshold specified by <b>&minus;&minus;threshold</b>. It
+also rejects keypoints that have an on-edge score above
+another threshold specified by
+<b>&minus;&minus;edge-threshold.</b></p>
+
+<p style="margin-left:8%; margin-top: 1em">Other options
+enable further customization of the algorithm.
+<b>&minus;&minus;unnormalized</b> disables the normalization
+of the descriptors. In this case descriptors entries are
+likely to overflow byte sizes, so this option should always
+be used in conjunction with
+<b>&minus;&minus;floating-point.</b></p>
+
+<p style="margin-top: 1em" valign="top"><b>EXAMPLES <br>
+&bull;</b></p>
+
+<p style="margin-left:14%;">Read the image
+&lsquo;image.pgm&rsquo; and write keypoints and descriptors
+to &lsquo;image.key&rsquo;:</p>
+
+<p style="margin-left:23%;">&gt; sift image.pgm</p>
+
+<p style="margin-top: 1em" valign="top"><b>&bull;</b></p>
+
+<p style="margin-left:14%;">Same as above, but use null
+thresholds</p>
+
+<p style="margin-left:23%;">&gt; sift -t 0 -e 0
+image.pgm</p>
+
+<p style="margin-top: 1em" valign="top"><b>&bull;</b></p>
+
+<p style="margin-left:14%;">Same as above, but do
+<i>not</i> double the resolution of the image as part of the
+computation of the Gaussian scale space:</p>
+
+<p style="margin-left:23%;">&gt; sift --first-octave 0
+image.pgm</p>
+
+<p style="margin-top: 1em" valign="top"><b>&bull;</b></p>
+
+<p style="margin-left:14%;">Read the image
+&lsquo;image.pgm&rsquo; and write the keypoints to
+&lsquo;image.key&rsquo; and the descriptor in binary format
+to &lsquo;image.desc&rsquo;:</p>
+
+<p style="margin-left:23%;">&gt; sift -b image.pgm</p>
+
+<p style="margin-top: 1em" valign="top"><b>&bull;</b></p>
+
+<p style="margin-left:14%;">Read the images
+&lsquo;image1.pgm&rsquo; and &lsquo;image2.pgm&rsquo; and
+write the keypoints and descriptors to
+&lsquo;/tmp/image1.key&rsquo; and
+&lsquo;/tmp/image2.key&rsquo;:</p>
+
+<p style="margin-left:23%;">&gt; sift -p /tmp/ image1.pgm
+image2.pgm</p>
+
+<p style="margin-top: 1em" valign="top"><b>&bull;</b></p>
+
+<p style="margin-left:14%;">Read the image
+&lsquo;image.pgm&rsquo; and the keypoints
+&lsquo;image.key&rsquo; and write keypoints and descriptors
+to &lsquo;/tmp/image.key&rsquo;:</p>
+
+<p style="margin-left:23%;">&gt; sift -p /tmp/ -k image.key
+image.pgm</p>
+
+<p style="margin-top: 1em" valign="top"><b>&bull;</b></p>
+
+<p style="margin-left:14%;">Same as above, but writes the
+descriptors in binary format to
+&lsquo;/tmp/image.desc&rsquo;:</p>
+
+<p style="margin-left:23%;">&gt; sift -b -p /tmp/ -k
+image.key image.pgm</p>
+
+<p style="margin-top: 1em" valign="top"><b>SEE ALSO</b></p>
+
+<p style="margin-left:8%;">convert(1),</p>
+
+<p style="margin-left:8%; margin-top: 1em">BSD
+March&nbsp;24, 2008 BSD</p>
+<hr>
+</body>
+</html>
