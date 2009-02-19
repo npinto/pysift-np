@@ -24,7 +24,7 @@ err_no_arch +=Configuration failed
 # LOWE_STRICT - Be more similar to Lowe's version
 # USEFASTMATH - Use faster approximated computations
 
-CXXFLAGS           += -I. -Wall -g -O3 -DNDEBUG
+CXXFLAGS           += -I. -Wall -g -O9 -DNDEBUG -fPIC
 #CXXFLAGS           += -Wno-variadic-macros
 CXXFLAGS           += -DVL_LOWE_STRICT 
 CXXFLAGS           += -DVL_USEFASTMATH
@@ -58,7 +58,11 @@ CXXFLAGS           += $($(ARCH)_CXXFLAGS)
 # --------------------------------------------------------------------
 
 .PHONY: all
-all: sift
+all: sift siftmodule.so
+
+siftmodule.so:
+	g++ -Wall -g -O9 -DNDEBUG -DVL_LOWE_STRICT  -DVL_USEFASTMATH -fPIC -I. -I/usr/include/python2.5 -c siftmodule.cpp -o siftmodule.o 
+	g++ -shared siftmodule.o sift.o -o siftmodule.so -lpython2.5 -Wl,-no-undefined -Wl,-rpath,`pwd`
 
 .PHONY: info
 info:
@@ -78,6 +82,7 @@ sift-driver.o sift.o benchmark.o : sift.hpp sift.ipp sift-conv.tpp
 .PHONY: clean
 clean:
 	rm -f *.o
+	rm -f *.so
 	find . -name '*~' -exec rm -f \{\} \;
 	find . -name '.DS_Store' -exec rm -f \{\} \;
 

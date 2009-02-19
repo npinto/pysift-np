@@ -14,7 +14,7 @@
 #include<algorithm>
 
 extern "C" {
-	//#include<getopt.h>
+#include<getopt.h>
 #if defined (VL_MAC)
 #include<libgen.h>
 #else

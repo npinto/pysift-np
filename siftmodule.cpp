@@ -56,7 +56,7 @@ sift_foo(PyObject *self, PyObject *args)
 
 const int maxval = 255; //the max value that a pixel can have
 
-static float log2(float x)
+static float mylog2(float x)
 {
 	static float ln2 = log(2.0);
 	return log(x)/ln2;
@@ -262,7 +262,7 @@ sift_run(PyObject *self, PyObject *args, PyObject *keywds)
 		O = std::max
 		(int
 		 (std::floor
-		  (log2
+		  (mylog2
 		   (std::min(buffer.width,buffer.height))) - omin -3), 1) ;
 	}
 
