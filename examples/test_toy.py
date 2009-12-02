@@ -34,6 +34,7 @@ mypath = path.dirname(path.abspath(__file__))
 
 input_image = path.join(mypath, 'test.pgm')
 output_image = path.join(mypath, 'demo_sift.png')
+output_descriptors = path.join(mypath, 'results_toy.txt')
 
 def printDescriptor(desc,file):
     map(lambda a: file.write(str(a)+' '),desc)
@@ -53,7 +54,7 @@ l.insert(0,im.size)
 desc = sift.sift(l,verbose=True)
 print len(desc), "descriptors found"
 
-output = open('results_toy.txt','w')
+output = open(output_descriptors,'w')
 
 pl.close()
 pl.imshow(np.asarray(im),cmap="gray", origin='upper')

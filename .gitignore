@@ -2,3 +2,4 @@
 testbed
 *.pyc
 *.so
+*egg*
