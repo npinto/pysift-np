@@ -52,6 +52,7 @@
 #if defined (VL_USEFASTMATH)
 #if defined (VL_MAC)
 #define VL_FASTFLOAT float
+#include "getopt.h"
 #else
 #define VL_FASTFLOAT double
 #endif
