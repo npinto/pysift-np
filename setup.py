@@ -5,8 +5,8 @@ from setuptools import setup, find_packages
 
 from distutils.core import setup, Extension
 
-exts = [Extension("sift/sift", sources=["sift/siftmodule.cpp",
-                                        "sift/sift.cpp"]
+exts = [Extension("sift", sources=["src/siftmodule.cpp",
+                                        "src/sift.cpp"]
                   )
         ]
 
