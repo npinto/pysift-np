@@ -1,3 +1,4 @@
 *.o
-sift
 testbed
+*.pyc
+*.so
